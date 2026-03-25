@@ -5,7 +5,11 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "https://github.com/Santhu-shan/sentimental-analysis",
+  server: {
+    host: "::",
+    port: 8080,
+    hmr: {
+      overlay: false,
     },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
